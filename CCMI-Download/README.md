@@ -33,6 +33,9 @@ Requirements to run:
 	ccmi_filelist_retrieve.sh
 	- HOME (line 3) the home directory (e.g. /home/usr/)
 	
+3)  You need all three files, but you need only run the python script. The bash scripts are
+	helper functions that are called by the python script.
+	
 -------------------------------------------------------------------------------------------------------------------
 
 Arguments:
