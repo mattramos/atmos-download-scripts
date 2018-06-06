@@ -1,7 +1,11 @@
-A selection of scripts which gets the CCMI data from the BADC ftp server. Currently 
+A selection of scripts which downloads CCMI data from the BADC ftp server. Currently 
 works on Unix systems. 
 
 The files will be save in the specified directory/experiment/frequency/var_name
+
+An example:
+
+python ccmi_data_retrieve.py download refC1 mon atmos monthly all zmh2o2
 
 Author : Matt Amos : m.amos1@lancaster.ac.uk
 
@@ -58,13 +62,13 @@ python ccmi_data_retrieve.py download refC1SD mon atmos monthly all vmro3 refres
 Subsequent Usage: (EXAMPLES)
 
 To download (not overwriting previous files)
-python ccmi_data_retrieve.py download refC2 mon atmos daily r1i1p1 vmro3 
+python ccmi_data_retrieve.py download refC2 mon atmos montly r1i1p1 vmro3 
 
 To download (overwriting previous files)
-python ccmi_data_retrieve.py download refC2 mon atmos daily all vmro3 overwrite
+python ccmi_data_retrieve.py download refC2 mon atmos monthly all vmro3 overwrite
 
 To download (not overwriting previous files), after refreshing the file database
-python ccmi_data_retrieve.py download refC2 mon atmos daily all vmro3 refresh
+python ccmi_data_retrieve.py download refC2 mon atmos monthly all vmro3 refresh
 
 -------------------------------------------------------------------------------------------------------------------
 
