@@ -42,15 +42,13 @@ Arguments:
 
 python ccmi_data_retrieve.py download exp o_freq model_comp timestep real var_name extras
 
-After this in order
-
-exp : experiment (refC1 etc)
-o_freq : output frequency  from model (mon, day etc)
-model_comp : model component (atmos)
-timestep : the data timestep (monthly, daily etc)
-real : realisation (r1i1p1, all etc)
-var_name : variable name (vmro3, ta etc)
-extras : (refresh, overwrite) explained below
+ - exp : experiment (refC1 etc)
+ - o_freq : output frequency  from model (mon, day etc)
+ - model_comp : model component (atmos)
+ - timestep : the data timestep (monthly, daily etc)
+ - real : realisation (r1i1p1, all etc)
+ - var_name : variable name (vmro3, ta etc)
+ - extras : (refresh, overwrite) explained below
 
 These arguments match the directory structure and names on the CEDA server
 
