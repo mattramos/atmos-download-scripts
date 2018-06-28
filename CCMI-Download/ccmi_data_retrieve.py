@@ -12,6 +12,8 @@ from ftplib import FTP
 # 8/3/18 MA Updated to download the latest version of the data, rather than
 # the specified version, it will now download the latest version
 # 9/3/18 MA Added statement to not redownload data
+# 28/6/18 MA Fixed, so as not to download similarly named variables
+#            e.g. not downloading vmro3s when vmro3 is selected
 #
 #
 # --------------USE---------------------
@@ -167,8 +169,8 @@ def find_var(mdl, exp, o_freq, model_comp, timestep, real, vers, var_name):
     if real == 'all':
         for temp_real in realisations:
             argslists += expand_timestep(mdl, exp, o_freq,
-                                     model_comp, timestep,
-                                     temp_real, vers, var_name)
+                                         model_comp, timestep,
+                                         temp_real, vers, var_name)
     else:
         argslists += expand_timestep(mdl, exp, o_freq,
                                      model_comp, timestep, real,
@@ -176,11 +178,11 @@ def find_var(mdl, exp, o_freq, model_comp, timestep, real, vers, var_name):
 
     # Check that the arglists created above are viable options
     for argslist in argslists:
-        temp_path = '/'.join(institutes[argslist[0]] + argslist)
+        temp_path = '/'.join(institutes[argslist[0]] + argslist) + '/'
         path_list += [path for path in all_variable_path_names if temp_path in path]
 
     # if the path list is empty, check for previous versions, this is because
-    # not all variables from a model have the same (latest) version
+    # not all variables from a model have the same (latest) version
     if len(path_list) == 0:
         vers = 'v' + str(int(vers[1]) - 1)
         if vers != 'v0':
